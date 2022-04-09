@@ -1,0 +1,4 @@
+---
+
+selinux_packages:
+  - policycoreutils-python-utils
