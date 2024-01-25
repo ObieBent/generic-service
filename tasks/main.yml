@@ -15,7 +15,7 @@
         - 'main.yml'
       paths: '../vars'
 
-- include: "{{ ansible_os_family }}.yml"
+- include_tasks: "{{ ansible_os_family }}.yml"
   tags: always
 
 - name: main | Install extract utils
@@ -176,5 +176,5 @@
     dest: /etc/logrotate.d/{{ genericservice.name }}
   when: genericservice.log_glob is defined
 
-- include: service.yml
+- include_tasks: service.yml
   tags: config_service
